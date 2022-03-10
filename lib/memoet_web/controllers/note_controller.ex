@@ -50,7 +50,7 @@ defmodule MemoetWeb.NoteController do
 
     if note.user_id != user.id do
       conn
-      |> put_flash(:error, "The desk does not exist, or you must copy it to your account first.")
+      |> put_flash(:error, "The deck does not exist, or you must copy it to your account first.")
       |> redirect(to: "/decks")
     else
       conn
