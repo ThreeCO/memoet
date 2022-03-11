@@ -47,7 +47,9 @@ defmodule MemoetWeb.NoteController do
     user = Pow.Plug.current_user(conn)
     deck = Decks.get_deck!(deck_id)
     note = Notes.get_note!(id)
-    note.options = Enum.shuffle note.options
+
+    # shuffle note options
+    Enum.shuffle note.options
     
     if note.user_id != user.id do
       conn
